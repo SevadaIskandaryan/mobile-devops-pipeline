@@ -1,8 +1,20 @@
 default_platform(:android)
 
+# Fastfile
+
 platform :android do
   desc "Build debug APK"
   lane :build do
     gradle(task: "assembleDebug")
+  end
+
+  desc "Run tests"
+  lane :test do
+    gradle(task: "test")
+  end
+
+  desc "Build release APK"
+  lane :release do
+    gradle(task: "assembleRelease")
   end
 end
